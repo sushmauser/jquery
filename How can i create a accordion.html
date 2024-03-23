@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> create accordion</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<style>
+       body{
+        height:100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+       } 
+        .Accordion{
+            width:50%;
+            text-align: left;
+            border:none;
+            border-bottom: 1px solid black;
+            padding:10px;
+            background-color: rgb(3, 163, 3);
+            font-size: 1.26rem;
+            font-weight: 500;
+            color: white !important;
+        }
+        .active, .Accordion:hover{
+            background:green
+        }
+        .panel{
+            width:50%;
+            background-color: rgb(221, 216, 216);
+            padding:20px 0px;
+            display:none;
+        }
+    </style>
+<body>
+   
+    
+    <h2 align="center">This is a Accordion</h2>
+    <button class="Accordion">Question no.1</button>
+        <div class="panel">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </div>
+    <button class="Accordion">Question no.2</button>
+        <div class="panel">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </div>
+    <button class="Accordion">Question no.3</button>
+        <div class="panel">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </div>
+    <script>
+        var acc = document.getElementsByClassName("Accordion");
+        var i; 
+        for (i = 0; i < acc.length; i++){
+        acc[i].addEventListener("click", function(){
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if(panel.style.display === "block"){
+            panel.style.display = "none";
+            }
+            else{
+            panel.style.display = "block";
+            }
+
+
+        });
+        }
+        </script>
+</body>
+</html>
